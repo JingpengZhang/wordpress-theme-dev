@@ -1,10 +1,3 @@
-/*
-Theme Name: ZhuoMingGCJX
-Author: JingpengZhang
-Description: ZhuoMingGXGC from wordpress.
-
-*/
-
 *,
 ::before,
 ::after {
@@ -564,6 +557,46 @@ video {
     display: none;
 }
 
+.icon-\[iconoir--language\] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Cpath d='M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2S2 6.477 2 12'/%3E%3Cpath d='M13 2.05S16 6 16 12s-3 9.95-3 9.95m-2 0S8 18 8 12s3-9.95 3-9.95M2.63 15.5h18.74m-18.74-7h18.74'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.icon-\[lucide--search\] {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21l-4.3-4.3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.visible {
+    visibility: visible;
+}
+
+.static {
+    position: static;
+}
+
+.fixed {
+    position: fixed;
+}
+
 .absolute {
     position: absolute;
 }
@@ -574,6 +607,10 @@ video {
 
 .left-0 {
     left: 0px;
+}
+
+.right-0 {
+    right: 0px;
 }
 
 .top-full {
@@ -588,54 +625,85 @@ video {
     margin-right: 1rem;
 }
 
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
 .flex {
     display: flex;
 }
 
-.h-16 {
-    height: 4rem;
+.table {
+    display: table;
 }
 
-.h-2 {
-    height: 0.5rem;
+.contents {
+    display: contents;
 }
 
-.h-9 {
-    height: 2.25rem;
-}
-
-.h-full {
-    height: 100%;
+.hidden {
+    display: none;
 }
 
 .h-0 {
     height: 0px;
 }
 
+.h-20 {
+    height: 5rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.h-9 {
+    height: 2.25rem;
+}
+
+.h-\[90\%\] {
+    height: 90%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-32 {
+    width: 8rem;
+}
+
 .w-40 {
     width: 10rem;
+}
+
+.w-44 {
+    width: 11rem;
+}
+
+.w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .w-full {
     width: 100%;
 }
 
-@keyframes slideOutFromLeft {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: 100%;
-    }
-}
-
-.animate-\[slideOutFromLeft_0\.5s_linear\] {
-    animation: slideOutFromLeft 0.5s linear;
-}
-
 .cursor-pointer {
     cursor: pointer;
+}
+
+.resize {
+    resize: both;
 }
 
 .items-center {
@@ -646,8 +714,16 @@ video {
     justify-content: space-between;
 }
 
+.gap-3 {
+    gap: 0.75rem;
+}
+
 .gap-4 {
     gap: 1rem;
+}
+
+.gap-8 {
+    gap: 2rem;
 }
 
 .overflow-hidden {
@@ -656,6 +732,10 @@ video {
 
 .text-nowrap {
     text-wrap: nowrap;
+}
+
+.border {
+    border-width: 1px;
 }
 
 .border-x-0 {
@@ -670,10 +750,6 @@ video {
 
 .border-b {
     border-bottom-width: 1px;
-}
-
-.border-b-2 {
-    border-bottom-width: 2px;
 }
 
 .border-b-0 {
@@ -709,14 +785,24 @@ video {
     background-color: rgb(51 51 51 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
 .px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-}
-
-.px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
 }
 
 .pl-0 {
@@ -742,14 +828,25 @@ video {
     color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.shadow-md {
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.blur {
+    --tw-blur: blur(8px);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition-all {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
-}
-
-.duration-500 {
-    transition-duration: 500ms;
 }
 
 .duration-300 {
@@ -803,31 +900,9 @@ video {
     left: -100%;
 }
 
-.after\:h-px::after {
-    content: var(--tw-content);
-    height: 1px;
-}
-
 .after\:w-full::after {
     content: var(--tw-content);
     width: 100%;
-}
-
-@keyframes slideOutFromLeft {
-    0% {
-        content: var(--tw-content);
-        left: 0;
-    }
-
-    100% {
-        content: var(--tw-content);
-        left: 100%;
-    }
-}
-
-.after\:animate-\[slideOutFromLeft_0\.5s_linear\]::after {
-    content: var(--tw-content);
-    animation: slideOutFromLeft 0.5s linear;
 }
 
 @keyframes slideOutFromLeft {
@@ -860,6 +935,11 @@ video {
     transition-duration: 150ms;
 }
 
+.hover\:bg-primary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 183 0 / var(--tw-bg-opacity));
+}
+
 .hover\:text-\[\#333\]:hover {
     --tw-text-opacity: 1;
     color: rgb(51 51 51 / var(--tw-text-opacity));
@@ -868,6 +948,11 @@ video {
 .hover\:text-primary:hover {
     --tw-text-opacity: 1;
     color: rgb(255 183 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:before\:bg-primary:hover::before {
@@ -879,23 +964,6 @@ video {
 .hover\:after\:left-0:hover::after {
     content: var(--tw-content);
     left: 0px;
-}
-
-@keyframes slideInFromLeft {
-    0% {
-        content: var(--tw-content);
-        left: -100%;
-    }
-
-    100% {
-        content: var(--tw-content);
-        left: 0;
-    }
-}
-
-.hover\:after\:animate-\[slideInFromLeft_0\.5s_linear\]:hover::after {
-    content: var(--tw-content);
-    animation: slideInFromLeft 0.5s linear;
 }
 
 @keyframes slideInFromLeft {

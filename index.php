@@ -11,6 +11,8 @@ echo '<pre>'; // 使输出格式更美观
 // }else{
 //   print_r('false');
 // }
+
+_e('title', 'zhongming');
 print_r(get_the_terms($page_data->ID, 'product_cat'));
 print_r($page_data);
 print_r($menu_tree2);

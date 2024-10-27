@@ -1,11 +1,54 @@
 <?php
 
+add_filter('show_admin_bar', '__return_false');
+
+function enqueue_jquery()
+{
+  wp_enqueue_script('jquery'); // 加载 WordPress 自带的 jQuery
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');
+
 register_nav_menus(array(
   "primary" => "主导航菜单",
   "footer" => "页脚菜单",
   "menus1" => '自定义菜单位置1',
   "menus2" => '自定义菜单位置2'
 ));
+
+add_action('woocommerce_product_options_general_product_data', 'add_custom_language_fields');
+
+function add_custom_language_fields()
+{
+  // 添加英文标题字段
+  woocommerce_wp_text_input(array(
+    'id' => 'custom_product_title_en',
+    'label' => __('Product Title (EN)', 'your-theme'),
+    'desc_tip' => 'true',
+    'description' => __('Enter the product title in English.', 'your-theme'),
+  ));
+
+  // 添加中文标题字段
+  woocommerce_wp_text_input(array(
+    'id' => 'custom_product_title_zh',
+    'label' => __('Product Title (ZH)', 'your-theme'),
+    'desc_tip' => 'true',
+    'description' => __('Enter the product title in Chinese.', 'your-theme'),
+  ));
+}
+
+add_action('woocommerce_process_product_meta', 'save_custom_language_fields');
+
+
+function save_custom_language_fields($post_id)
+{
+  $custom_title_en = isset($_POST['custom_product_title_en']) ? sanitize_text_field($_POST['custom_product_title_en']) : '';
+  $custom_title_zh = isset($_POST['custom_product_title_zh']) ? sanitize_text_field($_POST['custom_product_title_zh']) : '';
+
+  update_post_meta($post_id, 'custom_product_title_en', $custom_title_en);
+  update_post_meta($post_id, 'custom_product_title_zh', $custom_title_zh);
+}
+
+
 
 /**
  * 获取指定菜单的树形结构菜单项
@@ -167,4 +210,10 @@ function check_menu_item($menu_items, $current_url, $home_url)
   }
 
   return false; // 没有找到匹配
+}
+
+// 引入资源
+function base_on_theme_uri($url)
+{
+  return esc_url(get_template_directory_uri() . $url);
 }
